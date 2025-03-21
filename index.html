@@ -3,7 +3,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Lời Tỏ Tình</title>
+    <title>Nhấn vào xíu đi</title>
     <style>
         body {
             background-color: #FFC0CB;
@@ -44,18 +44,18 @@
             margin: 10px;
             cursor: pointer;
             display: inline-block;
-            border: 2px solid #FF69B4; /* Khung cho lựa chọn */
+            border: 2px solid #FF69B4;
             border-radius: 10px;
-            padding: 20px; /* Khoảng cách bên trong khung */
-            transition: transform 0.2s; /* Hiệu ứng khi hover */
-            background-color: white; /* Màu nền cho khung */
+            padding: 20px;
+            transition: transform 0.2s;
+            background-color: white;
         }
         .option:hover {
-            transform: scale(1.05); /* Phóng to khi hover */
+            transform: scale(1.05);
         }
         .cry-gif {
-            display: none; /* Ẩn GIF khóc ban đầu */
-            margin-top: 20px; /* Khoảng cách trên GIF khóc */
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -78,7 +78,7 @@
                 Vũ Trụ 🌌
             </div>
         </div>
-        <img class="cry-gif" id="cryGif" src=" https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXA3dnY0dzV5MW82dzMyeTFqZ2hqbngxbXN3ZjBxYhbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif" alt="GIF khóc" width="500"> <!-- GIF khóc -->
+        <img class="cry-gif" id="cryGif" src="" alt="GIF khóc" width="500"> <!-- GIF khóc -->
     </div>
     <script>
         function showLove(accept) {
@@ -86,7 +86,7 @@
             let options = document.getElementById('options');
             if (accept) {
                 message.innerHTML = 'Yay! Tớ cũng yêu cậu lắm! ❤️';
-                options.style.display = 'block'; // Hiện các lựa chọn
+                options.style.display = 'block';
             } else {
                 message.innerHTML = 'Dồ tồi! 😡';
             }
@@ -95,14 +95,17 @@
 
         function showFeeling(choice) {
             let message = document.getElementById('message');
-            let cryGif = document.getElementById('cryGif'); // Lấy GIF khóc
+            let cryGif = document.getElementById('cryGif');
             cryGif.style.display = 'block'; // Hiện GIF khóc
             if (choice === 'earth') {
                 message.innerHTML = 'Thì ra ngươi ta không yêu mk lắm!';
+                cryGif.src = 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExenJtaDZ3OTNuZW5seDhsMHozd2VjZnJwaWU4MXJ1dzFsMXJ2cnE4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif'; // Thay thế bằng URL GIF cho Trái Đất
             } else if (choice === 'ball') {
                 message.innerHTML = 'À, người ta muốn đá mk!';
+                cryGif.src = 'https://media.giphy.com/media/hmWnkhWgLrx5jRH6Kk/giphy.gif?cid=ecf05e47d7kcp4xry73wgu724os4g0fmhfywb6rghijy27d6&ep=v1_gifs_search&rid=giphy.gif&ct=g'; // Thay thế bằng URL GIF cho Quả Bóng
             } else if (choice === 'universe') {
                 message.innerHTML = 'À, người ta muốn mk đi xa người ta!';
+                cryGif.src = 'https://media.giphy.com/media/h2Ll7aXkPZyFPUJ5Al/giphy.gif?cid=ecf05e47b9xeto5w1w5js4nxwdis3fz0bfxj6zw85xadkvtv&ep=v1_gifs_search&rid=giphy.gif&ct=g'; // Thay thế bằng URL GIF cho Vũ Trụ
             }
             message.style.display = 'block';
         }
