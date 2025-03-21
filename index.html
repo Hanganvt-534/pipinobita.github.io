@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='vi'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lời Tỏ Tình</title>
+    <style>
+        body {
+            background-color: #FFC0CB;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        button {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #FF1493;
+        }
+        #message {
+            font-size: 20px;
+            color: red;
+            display: none;
+        }
+        .options {
+            display: none;
+            margin-top: 20px;
+        }
+        .option {
+            margin: 10px;
+            cursor: pointer;
+            display: inline-block;
+            border: 2px solid #FF69B4; /* Khung cho lựa chọn */
+            border-radius: 10px;
+            padding: 20px; /* Khoảng cách bên trong khung */
+            transition: transform 0.2s; /* Hiệu ứng khi hover */
+            background-color: white; /* Màu nền cho khung */
+        }
+        .option:hover {
+            transform: scale(1.05); /* Phóng to khi hover */
+        }
+        .cry-gif {
+            display: none; /* Ẩn GIF khóc ban đầu */
+            margin-top: 20px; /* Khoảng cách trên GIF khóc */
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h1>💖 Minh có yêu tớ không? 💖</h1>
+        <button onclick="showLove(true)">Có 💘</button>
+        <button onclick="showLove(false)">Không ❌</button>
+        <p id='message'></p>
+        
+        <div class="options" id="options">
+            <h2>Cậu yêu tớ như thế nào?</h2>
+            <div class="option" onclick="showFeeling('earth')">
+                Trái Đất 🌍 
+            </div>
+            <div class="option" onclick="showFeeling('ball')">
+                Quả Bóng ⚽
+            </div>
+            <div class="option" onclick="showFeeling('universe')">
+                Vũ Trụ 🌌
+            </div>
+        </div>
+        <img class="cry-gif" id="cryGif" src=" https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXA3dnY0dzV5MW82dzMyeTFqZ2hqbngxbXN3ZjBxYhbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif" alt="GIF khóc" width="500"> <!-- GIF khóc -->
+    </div>
+    <script>
+        function showLove(accept) {
+            let message = document.getElementById('message');
+            let options = document.getElementById('options');
+            if (accept) {
+                message.innerHTML = 'Yay! Tớ cũng yêu cậu lắm! ❤️';
+                options.style.display = 'block'; // Hiện các lựa chọn
+            } else {
+                message.innerHTML = 'Dồ tồi! 😡';
+            }
+            message.style.display = 'block';
+        }
+
+        function showFeeling(choice) {
+            let message = document.getElementById('message');
+            let cryGif = document.getElementById('cryGif'); // Lấy GIF khóc
+            cryGif.style.display = 'block'; // Hiện GIF khóc
+            if (choice === 'earth') {
+                message.innerHTML = 'Thì ra ngươi ta không yêu mk lắm!';
+            } else if (choice === 'ball') {
+                message.innerHTML = 'À, người ta muốn đá mk!';
+            } else if (choice === 'universe') {
+                message.innerHTML = 'À, người ta muốn mk đi xa người ta!';
+            }
+            message.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
